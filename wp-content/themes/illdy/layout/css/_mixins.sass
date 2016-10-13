@@ -1,0 +1,68 @@
+$yellow: #feea00
+$yellow-dark: darken($yellow, 10)
+$black: #333
+$grey: #888888
+
+@import 'https://fonts.googleapis.com/css?family=Josefin+Sans:400,700'
+@import 'https://fonts.googleapis.com/css?family=Amatic+SC:400,700'
+
+
+// Mixin: Backgorund Size
+@mixin background-size($value)
+	-webkit-background-size: $value
+	-moz-background-size: $value
+	-o-background-size: $value
+	background-size: $value
+
+
+// Mixin: Border Radius
+@mixin border-radius($value)
+	border-radius: $value
+
+
+// Mixin: Transition
+@mixin transition($value)
+	-webkit-transition: $value
+	-moz-transition: $value
+	-o-transition: $value
+	transition: $value
+
+
+@keyframes strobe
+
+  0%, 50%, 99%
+    opacity: .1
+
+  1%, 51%, 98%, 100%
+    opacity: 0
+
+
+@keyframes bounce
+
+  0%, 50%, 99%
+    transform: scale(1.008)
+
+  1%, 51%, 98%, 100%
+
+    transform: scale(1)
+
+@keyframes heart
+    0%
+        transform: scale(1)
+    50%
+        transform: scale(1.3)
+    100%
+        transform: scale(1)
+
+=ellipsis($font-size, $line-height, $lines-to-show)
+  display: block
+  display: -webkit-box
+  max-width: 400px
+  max-height: $font-size*$line-height*$lines-to-show
+  margin: 0 auto
+  font-size: $font-size
+  line-height: $line-height
+  -webkit-line-clamp: $lines-to-show
+  -webkit-box-orient: vertical
+  overflow: hidden
+  text-overflow: ellipsis
