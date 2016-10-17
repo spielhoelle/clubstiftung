@@ -1,0 +1,2592 @@
+/**
+ *  01. General
+ *  02. Header
+ *  03. About
+ *  04. Projects
+ *  05. Testimonials
+ *  06. Services
+ *  07. Latest News
+ *  08. Counter
+ *  09. Team
+ *  10. Contact Us
+ *  11. Footer
+ *  12. Blog
+ *  13. Sidebar
+ *  14. Markup Format
+ *  15. Related Posts
+ *  16. Comments
+ *  17. Responsive
+ */
+
+/* 01. General */
+::selection
+  background: $yellow
+
+::-moz-selection
+  background: $yellow
+
+
+.background
+  text-shadow: 2px 1px 1px black
+  @include background-size(cover)
+  background-attachment: fixed
+  .section-header, .section-content
+    &, h3, p
+      color: white !important
+
+.front-page-section
+  // margin-top: -40px
+  padding-top: 160px
+  padding-bottom: 120px
+
+  label
+    display: none
+a
+  color: $yellow
+  transition: color .3s ease
+  &:hover
+    text-decoration: underline
+    color: $yellow
+
+html,
+body
+  width: 100%
+  height: 100%
+  display: block
+  background-color: $black
+.language-chooser
+  padding: 0
+  list-style: none
+  li
+    &.active
+      display: none
+
+html[lang="de-DE"]
+  .lang_en
+    display: block
+html[lang="en-US"]
+  .lang_de
+    display: block
+
+body
+  line-height: 1.5
+  font-weight: 400
+  font-size: 20px
+  color: $grey
+  font-family: "Josefin Sans"
+
+
+h1, h2, h3, h4, h5, h6, .counter-number
+  font-family: "Amatic SC"
+
+textarea,
+input
+  -webkit-appearance: none
+  border-radius: 0
+
+
+.front-page-section
+  width: 100%
+
+  .section-header
+    width: 100%
+
+    h3
+      margin: 0 0 30px 0
+      font-weight: 900
+      font-size: 50px
+      color: white
+      text-transform: uppercase
+
+
+    p
+      margin-bottom: 0
+      line-height: 1.6
+      color: white
+      @media (min-width: 767px)
+        max-width: 800px
+        margin: 0 auto
+
+
+  .section-content
+    width: 100%
+
+
+
+.no-padding
+  padding: 0
+
+
+.wp-caption-text,
+.sticky,
+.gallery-caption,
+.bypostauthor
+  margin: 0
+  display: none
+
+.open-responsive-menu
+  display: none
+.responsive-menu
+  display: none
+
+.customizer-display-none
+  display: none
+
+
+.customizer-display-block
+  display: block
+
+
+/* 02. Header */
+.faders
+  > *
+    opacity: 0
+    $time: 0s
+    $i: 0
+    @for $i from 0 through 20
+      &:nth-child(#{$i})
+        transition: opacity .5s ease $time
+      $time: $time + 0.3
+
+  .faded-in
+    opacity: 1
+
+#header
+  width: 100%
+  background-color: #333
+  background: transparent none no-repeat scroll center center / cover
+  position: relative
+  background-attachment: fixed
+  overflow: hidden
+  .flexed
+    display: flex
+    justify-content: space-between
+  .home &
+    .top-header .container,
+    .bottom-header
+      animation: bounce 1s steps(1, end) infinite
+
+
+    .top-header
+      position: fixed
+      z-index: 2
+  .top-header
+    width: 100%
+
+    .header-block
+      height: 80px
+
+    .custom-logo-link
+      display: inline-block
+      padding: 10px
+      width: 200px
+      img
+        height: 100%
+        width: auto
+
+    .header-logo
+      display: block
+      font-size: 38px
+      color: #ffffff
+      @include transition(all 0.3s)
+      float: left
+
+      &:hover
+        color: $yellow
+        text-decoration: none
+
+
+
+    .header-navigation
+      float: right
+      width: 100%
+      display: flex
+      flex-flow: column
+      justify-content: center
+      >ul
+        width: 100%
+        padding: 0
+        list-style-type: none
+        align-items: center
+        display: flex
+        justify-content: space-around
+        margin: 0
+        li
+          line-height: 1.375
+          font-weight: 700
+          font-size: 16px
+          color: #ffffff
+          text-transform: uppercase
+          position: relative
+          float: left
+          a
+            white-space: nowrap
+            padding: 10px
+            &[href^="https://www.facebook"]
+              border: 1px solid white
+          a.languageswitcher
+            padding: 10px 0
+
+          &:first-child
+            margin-left: 0
+
+
+          &.menu-item-has-children
+            a
+              padding-right: 16px
+              position: relative
+
+              &:after
+                content: "\f0d7"
+                font-family: "FontAwesome"
+                font-size: 16px
+                position: absolute
+                top: 0
+                right: 0
+
+
+
+            .sub-menu
+              width: 250px
+              margin: 0
+              padding: 10px 0 0 0
+              position: absolute
+              left: 0
+              display: none
+
+              li
+                width: 100%
+                margin: 0
+                padding: 0
+
+                &:first-child a
+                  padding-top: 10px
+
+
+                &:last-child a
+                  padding-bottom: 10px
+
+
+                a
+                  width: 100%
+                  background-color: #ffffff
+                  margin: 0
+                  padding: 5px 10px
+                  line-height: 1.6
+                  font-weight: 600
+                  font-size: 16px
+                  color: #333333
+                  text-transform: none
+                  display: block
+
+                  &:hover
+                    color: $yellow
+
+
+                  &:after
+                    display: none
+
+
+
+
+
+
+          a
+            color: #ffffff
+            @include transition(all 0.3s)
+
+            &:hover
+              color: #ffde00
+              text-decoration: none
+
+
+  .bottom-header
+    height: 33vh
+    width: 100%
+    .fa
+      cursor: pointer
+      width: 100%
+      height: 10vh
+      bottom: 80px
+      position: absolute
+      // background: pink
+      display: block
+      font-size: 8rem
+      color: white
+      opacity: 0
+      &:hover
+        color: $yellow
+
+    .home &
+      height: 100vh
+    .single &
+      // height: 33vh
+    display: flex
+    flex-flow: column
+    justify-content: center
+    text-align: center
+    h2
+      font-weight: 900
+      font-size: 81px
+      color: #ffffff
+      text-transform: uppercase
+    p
+      margin-bottom: 0
+
+    span.span-dot
+      color: #ffde00
+
+    p
+      line-height: 1.6
+      margin-bottom: 60px
+      font-size: 25px
+      color: #ffffff
+
+
+.header-button-one
+  width: auto
+  height: 63px
+  line-height: 57px
+  background: rgba(255, 255, 255, 0.2)
+  margin: 0 15px
+  padding: 0 70px
+  display: inline-block
+  border: 3px solid #ffffff
+  @include border-radius(3px)
+  font-weight: 700
+  font-size: 18px
+  color: #ffffff
+  text-transform: uppercase
+  @include transition(all 0.3s)
+
+  &:hover
+    background: rgba(255, 255, 255, 0.1)
+    text-decoration: none
+  .fa
+    margin-right: 12px
+
+
+.header-button-two
+  text-shadow: none
+  width: auto
+  height: 63px
+  line-height: 63px
+  background: $yellow
+  margin: 0 15px
+  padding: 0 70px
+  display: inline-block
+  @include border-radius(3px)
+  font-weight: 700
+  font-size: 18px
+  color: $black
+  text-transform: uppercase
+  @include transition(all 0.3s)
+  cursor: pointer
+  border: 0 none
+
+.header-button-one,
+.header-button-two
+  &:hover, &:focus
+    background: transparentize($yellow, .1)
+    text-decoration: none
+    color: white
+
+
+
+/* 03. About */
+#about
+  width: 100%
+  text-align: center
+
+  .section-header
+    margin-bottom: 110px
+    z-index: 1
+    position: relative
+
+  .skill
+    width: 100%
+
+    .skill-top
+      width: 100%
+      margin-bottom: 25px
+
+      .skill-progress-bar
+        width: 100%
+        height: 2px
+        background-color: #ebebeb
+        position: relative
+
+        .ui-progressbar-value
+          height: 4px
+          position: absolute
+          top: -1px
+          left: 0
+
+          .ui-progressbar-value-circle
+            content: ""
+            width: 9px
+            height: 9px
+            position: absolute
+            top: -2.5px
+            right: 0
+            @include border-radius(50%)
+
+
+          .ui-progressbar-value-top
+            content: ""
+            width: 64px
+            height: 29px
+            line-height: 29px
+            background-color: #000000
+            position: absolute
+            top: -45px
+            right: -28px
+            @include border-radius(3px)
+            font-weight: 700
+            font-size: 17px
+            color: white
+
+            .ui-progressbar-value-triangle
+              width: 0
+              height: 0
+              margin-right: auto
+              margin-left: auto
+              border-style: solid
+              border-width: 5px 4.5px 0 4.5px
+              line-height: 0px
+              position: absolute
+              right: 0
+              bottom: -5px
+              left: 0
+
+
+
+
+
+
+    .skill-bottom
+      width: 100%
+      text-align: left
+
+      .fa
+        font-size: 22px
+
+
+      span
+        color: white
+        margin-left: 8px
+        line-height: 1.294
+        font-size: 17px
+
+
+  .widget_clubstiftung_skill
+    margin-top: 106px
+
+    &:nth-child(1),
+    &:nth-child(2),
+    &:nth-child(3)
+      margin-top: 0
+.tmcajaxresponse
+  padding: 20px
+  .fa.fa-error,
+  .fa.fa-check
+    line-height: 0
+    position: relative !important
+  &.success
+    border: 3px solid #7ac87a
+    color: white !important
+  &.error
+    color: white !important
+    border: 3px solid #cc7d7d
+
+
+
+/* 04. Projects */
+#supports
+  background-color: black
+  padding-bottom: 20px
+#projects
+  padding-top: 20px
+
+#projects, #supports
+  width: 100%
+  text-align: center
+
+  .carousel:not(.owl-carousel)
+    display: flex
+    flex-flow: row wrap
+    > *
+      flex: 0 0 25%
+      @media only screen and (max-width: 767px)
+        flex: 0 0 50%
+      @media only screen and (max-width: 380px)
+        flex: 0 0 100%
+  .owl-carousel
+    position: relative
+    &:hover
+      .owl-controls
+        opacity: 1
+  .owl-controls
+    opacity: 0
+    transition: opacity .3s ease
+    position: absolute
+    top: 0
+    left: -5%
+    width: 110%
+    height: 100%
+    pointer-events: none
+    .owl-nav
+      height: 100%
+      align-items: center
+      display: flex
+      justify-content: space-between
+      margin: 0 auto
+      > *
+        pointer-events: all
+        padding: 80px 30px
+        cursor: pointer
+        &:hover
+    .owl-dots
+      width: 100%
+
+      .owl-dot
+        width: 10px
+        height: 10px
+        background-color: #000
+        margin: 0 7.5px
+        display: inline-block
+        @include transition(all 0.3s)
+        @include border-radius(50%)
+
+        &:hover,
+        &.active
+          background: transparent
+          border: 1px solid #000
+
+
+
+  .container-fluid
+    max-width: 1920px
+
+  .section-header
+    margin-bottom: 65px
+
+  figure
+    width: 100%
+    height: 200px
+    display: block
+    position: relative
+    filter: grayscale(1)
+    text-decoration: none
+    overflow: hidden
+    transition: filter .3s ease
+    figcaption
+      pointer-events: none
+      width: 100%
+      transform: translateY(100%)
+      position: absolute
+      bottom: 0
+      background-color: darken($black, 10)
+      transition: transform .3s ease
+      z-index: 1
+      color: white
+      display: flex
+      padding: 10px 20px
+      text-align: left
+      align-items: flex-end
+      .info
+        flex: 1
+        max-width: 85%
+        color: darken(white, 20)
+
+        p
+          display: block
+          overflow: hidden
+          text-overflow: ellipsis
+          white-space: nowrap
+        > *
+          transform: scale(.9)
+          transition: transform .3s ease
+
+        .project-title
+          margin: 0
+          z-index: 1
+          font-size: 3rem
+        i:before
+          color: white
+
+    &:hover
+      filter: grayscale(0)
+      img
+        transform: translateY(-15%) scale(1)
+      figcaption
+        transform: translateY(0)
+        .info > *
+          transform: scale(1)
+          opacity: 1
+
+
+
+  a.project
+    text-align: right
+    flex: 0 0 30px
+    text-decoration: none
+
+  img
+    transition: transform .3s ease
+    left: 0
+    top: 0
+    @include background-size(contain)
+    background-repeat: no-repeat
+    background-position: center center
+    width: 100%
+    height: 100%
+    position: absolute
+    z-index: -1
+    transform: scale(0.95)
+
+
+  .project-overlay
+    width: 100%
+    height: 100%
+    background-color: #000
+    opacity: 0
+    position: absolute
+    top: 0
+    left: 0
+    z-index: 1
+    pointer-events: none
+    @include transition(all 0.3s)
+
+
+
+
+/* 05. Testimonials */
+#testimonials
+  width: 100%
+  padding: 50px 0 30px 0
+  text-align: center
+  position: relative
+  background: #6a305e
+  background-image: url('/wp-content/themes/clubstiftung/layout/images/bg.jpg')
+  @include background-size(cover)
+  background-attachment: fixed
+  background-position: center center
+
+  .section-header
+    width: 100%
+    margin-bottom: 40px
+
+    h3
+      color: #ffffff
+
+
+
+  .section-content
+    width: 100%
+
+    .testimonials-carousel
+      width: 100%
+
+      .carousel-testimonial
+        text-align: center
+
+        .testimonial-image
+          width: 100%
+          margin-bottom: 25px
+
+          img
+            width: 127px
+            height: 127px
+            display: inline
+            @include border-radius(50%)
+
+
+
+        .testimonial-content
+          width: 100%
+          background-color: $yellow
+          margin-bottom: 55px
+          padding: 25px 50px
+          position: relative
+
+          blockquote
+            line-height: 1.6
+            margin: 0
+            padding: 0
+            border-left: none
+            color: #ffffff
+            text-shadow: 1px 1px 10px #000
+
+
+          &:after
+            content: ""
+            width: 0
+            height: 0
+            margin-right: auto
+            margin-left: auto
+            border-style: solid
+            border-width: 19px 18px 0 18px
+            border-color: $yellow transparent transparent transparent
+            position: absolute
+            right: 0
+            bottom: -19px
+            left: 0
+
+
+
+        .testimonial-meta
+          width: 100%
+          line-height: normal
+          font-weight: 900
+          font-size: 20px
+          color: #ffffff
+          text-transform: uppercase
+
+
+
+
+
+
+
+
+/* 06. Services */
+#services
+  width: 100%
+  text-align: center
+
+  .section-header
+    width: 100%
+    margin-bottom: 65px
+
+
+  .section-content
+    width: 100%
+
+    .service
+      width: 100%
+
+      .service-icon
+        transition: color .3s ease
+        width: 100%
+        margin-bottom: 10px
+        font-size: 34px
+        text-shadow: 2px 2px 0px $black
+        .fa
+          display: block
+          font-size: 5rem
+
+
+      .service-title
+        width: 100%
+        margin-bottom: 30px
+        line-height: 1.611
+        font-weight: 700
+        font-size: 18px
+        text-transform: uppercase
+
+
+      .service-entry
+        width: 100%
+        line-height: 1.6
+
+
+  .widget_clubstiftung_service
+    margin-top: 40px
+
+    &:nth-child(1),
+    &:nth-child(2),
+    &:nth-child(3)
+      margin-top: 0
+
+
+.max-width
+  max-width: 1170px
+  margin: 0 auto
+
+.news-faders
+  > *
+    opacity: 0
+    transition: opacity .3s ease
+
+/* 07. Latest News */
+.newsflex
+  display: flex
+  flex-flow: row wrap
+  .blog-post.nothing-found
+    width: 100%
+    text-align: center
+    padding: 10vh
+    font-size: 4rem
+  .blog-post-image
+    width: 100%
+    padding-bottom: 40%
+    height: 0
+    background: transparent none no-repeat scroll center center / cover
+    width: 100%
+    background-position: center center
+    @include background-size(cover)
+
+  .post
+    padding: 20px
+    flex: 0 0 percentage(4/12)
+    @media (max-width: 992px)
+      flex: 0 0 percentage(6/12)
+    @media (max-width: 600px)
+      flex: 0 0 100%
+
+    align-items: stretch
+    display: flex
+    flex-flow: column
+
+    .blog-post
+      flex: 1
+      display: flex
+      flex-flow: column
+      align-items: flex-start
+      padding: 20px
+      background: darken($black, 5)
+      &:hover
+        background-color: darken($black, 6)
+    .blog-post-title
+      font-family: "Amatic SC"
+      width: 100%
+      line-height: 1.388
+      font-weight: 700
+      font-size: 3rem
+      text-transform: uppercase
+      @include transition(all 0.3s)
+      display: block
+      +ellipsis(3rem, 1.5, 2)
+      max-width: none
+      max-height: none
+      color: $grey
+    &:hover
+      .blog-post-button
+        background-color: transparentize(white, .5)
+      .blog-post-title
+        color: $yellow
+        text-decoration: none
+
+    .post-entry
+      margin: 30px 0 55px 0
+      padding: 0 30px
+      line-height: 1.6
+      color: $grey
+
+  .blog-post-button
+    height: 45px
+    margin-top: 20px
+    line-height: 45px
+    background-color: transparentize(white, .9)
+    padding: 0 30px
+    display: inline-block
+    @include border-radius(3px)
+    font-weight: 700
+    font-size: 18px
+    color: #ffffff
+    @include transition(all 0.3s)
+    text-transform: uppercase
+    .fa
+      margin-right: 13px
+    &:hover
+      text-decoration: none
+      opacity: 0.9
+
+  .latest-news-button
+    margin-bottom: 60px
+    opacity: 0.5
+    @include transition(opacity 0.3s ease)
+    &:hover
+      opacity: 1
+
+
+
+#latest-news
+  width: 100%
+  text-align: center
+
+  .section-header
+    margin-bottom: 25px
+
+  .section-content
+    width: 100%
+
+    .post
+      width: 100%
+      height: 100%
+      padding-bottom: 40px
+      margin-bottom: 40px
+      text-align: left
+      @include transition( background-color .3s ease)
+
+
+
+
+
+
+/* 08. Counter */
+#counter
+  width: 100%
+  text-align: center
+  position: relative
+  background-attachment: fixed
+  @include background-size(cover)
+  background-position: center
+  > .container
+    position: relative
+    > .row
+      display: flex
+      justify-content: space-around
+      > *
+        width: 100%
+  .widget_clubstiftung_counter
+    border-right: 1px solid #ffffff
+
+    &:last-child
+      border-right: none
+
+
+
+  .counter-overlay
+    width: 100%
+    height: 100%
+    background: rgba(0, 0, 0, 0.5)
+    position: absolute
+    top: 0
+    left: 0
+
+
+  .counter-number
+    width: 100%
+    display: block
+    margin-bottom: 3rem
+    line-height: 0.9
+    font-weight: 900
+    font-size: 8vw
+    color: #ffffff
+    @media (max-width: 992px)
+      font-size: 100px
+
+
+  .counter-description
+    width: 100%
+    line-height: 2.25
+    display: block
+    font-size: 20px
+    color: #ffffff
+    text-transform: uppercase
+
+
+  .widget_clubstiftung_counter
+    margin-top: 40px
+
+    &:nth-child(1),
+    &:nth-child(2),
+    &:nth-child(3)
+      margin-top: 0
+
+
+/* 09. Team */
+.row.team
+  display: flex
+  justify-content: space-between
+  flex-flow: row wrap
+
+  > *
+    flex: 1 0 300px
+#team
+  width: 100%
+  text-align: center
+  .teamphone
+  .section-header
+    width: 100%
+    margin-bottom: 85px
+
+
+  .section-content
+    width: 100%
+
+    .person
+      display: flex
+      justify-content: center
+      flex-flow: column
+      align-items: center
+
+    .person-image
+      width: 125px
+      margin-right: 25px
+
+      img
+        max-width: 100%
+        height: auto
+        @include border-radius(50%)
+
+
+
+    .person-content
+      width: 100%
+      h4
+        width: 100%
+        margin: 12px 0 5px 0
+        line-height: 1.25
+        font-size: 3rem
+        color: white
+        text-transform: uppercase
+
+
+      h5
+        width: 100%
+        margin: 0 0 10px 0
+        font-weight: 700
+        font-size: 2.4rem
+        text-transform: uppercase
+
+
+      p
+        width: 100%
+        margin: 0 0 10px 0
+        line-height: 1.5
+        font-weight: 300
+        color: $grey
+
+
+      .person-content-social
+        width: 100%
+        margin: 0
+        padding: 0
+        list-style-type: none
+        display: flex
+        justify-content: center
+        position: relative
+
+        li
+          margin-left: 10px
+
+          &:first-child
+            margin-left: 0
+          &:hover
+            span
+              opacity: 1
+              display: block
+          a
+            background: transparent !important
+
+          span
+            position: absolute
+            width: 100%
+            color: white
+            text-align: center
+            left: 0
+            top: 40px
+            padding: 10px
+            font-size: 20px
+            opacity: 0
+            transition: opacity .3s ease
+            display: none
+          i
+            background: $yellow
+            line-height: 22px
+            padding: 10px
+            display: inline-block
+            @include border-radius(50%)
+            font-size: 30px
+            color: #ffffff
+            text-align: center
+            transition: transform 0.3s ease
+            &:before
+              line-height: 22px
+              color: $black
+            &:hover
+              transform: scale(1.1)
+
+
+
+
+
+
+
+
+  .widget_clubstiftung_person
+    margin-top: 40px
+
+    &:nth-child(1),
+    &:nth-child(2),
+    &:nth-child(3)
+      margin-top: 0
+
+
+
+
+/* 10. Contact Us */
+#contact-us
+  width: 100%
+  background-color: $black
+  text-align: center
+  position: relative
+  // &:hover
+    // #map_canvas
+  overflow: hidden
+
+  .mappable, .wpcf7
+    transition: transform .3s ease, opacity .3s ease
+
+  .mapped
+    opacity: 0
+    transform: translateY(-100%)
+
+  #map_canvas
+    opacity: .5
+    transition: opacity .3s ease
+    top: 0
+    height: 100%
+    width: 100%
+    position: absolute !important
+    pointer-events: none
+    transition: opacity .3s ease
+    &.showmap
+      opacity: 1
+      pointer-events: all
+      z-index: 1
+    .gmnoprint, .gm-style-cc, a[target="_blank"]
+      display: none !important
+
+  .section-header
+    width: 100%
+    margin-bottom: 100px
+
+    h3,
+    p
+      color: #ffffff
+
+
+
+  .section-content
+    width: 100%
+
+    .contact-us-box
+      width: 100%
+      display: inline-block
+      text-align: left
+      display: flex
+      flex-flow: row wrap
+      .box-left
+        width: auto
+        margin: 0
+        padding: 0 20px 0 0
+        border-right: 1px solid #ffffff
+        line-height: normal
+        display: table-cell
+        font-weight: 700
+        font-size: 18px
+        color: #ffffff
+        text-transform: uppercase
+
+
+      .box-right
+        width: auto
+        margin: 0
+        padding: 0 0 0 20px
+        display: table-cell
+
+        span
+          width: 100%
+          display: block
+          line-height: 1.6
+          font-size: 15px
+          color: white
+
+          a
+            color: white
+            text-decoration: none
+
+            &:hover
+              color: $yellow
+              text-decoration: underline
+
+
+
+
+
+
+    .contact-us-social
+      width: 100%
+      text-align: right
+      display: flex
+      justify-content: space-around
+      a
+        padding: 10px
+        font-size: 17px
+        color: #ffffff
+        @include transition(all 0.3s)
+        i:before
+          font-size: 2rem
+        &:hover
+          color: $yellow
+
+
+
+
+    .wpcf7-form
+      width: 100%
+      text-align: left
+      .ajax-loader
+        display: none !important
+      .loadingindicator
+        overflow: hidden
+        position: absolute
+        top: 0
+        width: 100%
+        display: flex
+        justify-content: center
+        pointer-events: none
+        i
+          font-size: 16em!important
+          margin-left: 20px
+          opacity: 0
+          -webkit-transform: translate(-50%,0)
+          -ms-transform: translate(-50%,0)
+          transform: translate(-50%,0)
+          transition: opacity .3s ease
+
+      .wpcf7-form-control-wrap
+        transition: opacity .3s ease
+      .wpcf7-response-output
+        text-align: center
+        color: white
+        padding: 10px
+        margin: 20px 0 0 0
+
+      span.wpcf7-not-valid-tip
+        color: $yellow
+      div.wpcf7-validation-errors
+        border: 0 none
+        background: #ae2727
+        padding: 10px
+      .wpcf7-mail-sent-ok
+        border: 0 none
+        background: #5bff6d
+      p
+        color: #ffffff
+
+        span
+          width: 100%
+          display: block
+
+
+        .wpcf7-text
+          width: 100%
+          height: 46px
+          background-color: darken($black, 10)
+          padding: 0 20px
+          border: 0 none
+          outline: 0
+          font-size: 15px
+          color: #ffffff
+          display: block
+
+          &::-webkit-input-placeholder
+            color: #ffffff
+
+
+          &::-moz-placeholder
+            color: #ffffff
+
+
+          &:-ms-input-placeholder
+            color: #ffffff
+
+
+          &:-moz-placeholder
+            color: #ffffff
+
+
+
+        .wpcf7-textarea
+          width: 100%
+          height: 92px
+          background-color: darken($black, 10)
+          margin: 0
+          padding: 10px 20px 10px 20px
+          border: 0 none
+          outline: 0
+          resize: none
+          display: block
+
+          &::-webkit-input-placeholder
+            color: #ffffff
+
+
+          &::-moz-placeholder
+            color: #ffffff
+
+
+          &:-ms-input-placeholder
+            color: #ffffff
+
+
+          &:-moz-placeholder
+            color: #ffffff
+
+
+        .wpcf7-text, .wpcf7-textarea
+          &:focus
+            background: darken($black, 15)
+
+.wpcf7-submit
+  float: right
+
+.wpcf7-submit, .mapbutton
+  display: block
+  text-transform: uppercase
+
+.wpcf7-submit, .mapbutton, #mce-EMAIL
+  cursor: pointer
+
+.wpcf7-submit, .mapbutton, #mce-EMAIL, input[type="search"]
+  width: auto
+  height: 44px
+  background-color: darken($black, 10)
+  padding: 0 60px
+  border: none
+  display: inline-block
+  font-weight: 700
+  color: white
+  @include transition(all 0.3s)
+  outline: 0
+  &:hover, &:focus
+    background: darken($black, 15) !important
+
+#mce-EMAIL
+  margin-bottom: 20px
+  height: 64px
+  padding: 0 20px
+  width: 275px
+  text-transform: uppercase
+
+.tmcajax
+  label
+    display: none
+
+.mapbutton
+  display: inline-block
+  background: transparent
+  position: relative
+  margin: 30px auto 0
+  z-index: 2
+  border: 1px solid white
+  &:hover
+    background: darken($black, 15)
+
+
+/* 11. Footer */
+
+#footer
+  .widget-recent-post
+    a
+      display: block
+      margin: 0 auto
+      white-space: nowrap
+      overflow: hidden
+      text-overflow: ellipsis
+  &:hover
+    .tommy
+      &, a, i
+        color: #666
+      i.fa-heart
+        animation-play-state: running
+    .footer-logo img
+      filter: grayscale(0)
+    .header-button-two
+      color: $yellow
+
+  .tommy
+    font-size: 1rem
+    text-align: center
+    background-color: #0c0c0c
+    padding: 10px
+    &, i, a
+      color: $black
+      transition: color .3s ease
+    i
+      animation-name: heart
+      animation-duration: 1s
+      animation-iteration-count: infinite
+      animation-timing-function: ease
+      padding: 0 5px
+      animation-play-state: paused
+
+#footer
+  width: 100%
+  background-color: #111
+  padding: 40px 0 0 0
+  > .container
+    > .row
+      display: flex
+      flex-flow: row wrap
+      > *
+        flex: 1 0 200px
+        padding: 20px
+        min-width: 230px
+
+  .header-button-two
+    margin: 0
+    border: 0 none
+    transition: color .3s ease,background-color .3s ease
+    &:hover
+      background-color: #000
+
+  #mce-EMAIL
+    cursor: text
+  #mce-EMAIL, .header-button-two
+    background: transparent
+    padding: 0 10px
+    width: 100%
+    margin-bottom: 30px
+    border: 1px solid #737373
+    color: #989595
+    line-height: 1
+
+
+  .footer-logo
+    width: 100%
+    margin-bottom: 20px
+    display: block
+
+    img
+      max-width: 100%
+      height: auto
+      transition: filter .3s ease
+      filter: grayscale(1)
+
+
+  a
+    line-height: 1.5
+    color: $grey
+
+    &:hover
+      color: $yellow
+
+  .copyright
+    width: 100%
+    line-height: 0.933
+    color: $grey
+
+    a
+      color: $grey
+      text-decoration: none
+
+      &:hover
+        text-decoration: underline
+
+
+
+  .widget, .tommy
+    .widget-title
+      margin: 0 0 20px 0
+      padding: 0
+
+      &:before
+        display: none
+
+
+      h3
+        line-height: 1.15
+        color: $grey
+
+
+
+    ul
+      li
+        margin: 0 0 20px 0
+        padding-top: 0
+        padding-right: 0
+        padding-bottom: 0
+        border-bottom: none
+
+        &:last-child
+          margin-bottom: 0
+
+
+
+
+
+
+        &:before
+          color: $grey
+
+
+
+
+
+.blog-post-meta
+  width: 100%
+  margin: 20px 0
+  .single &
+    margin: 40px 0
+  line-height: 2.428
+  font-size: 14px
+  [class^="post-meta"]
+    margin: 0 10px 0 0
+    display: inline-block
+    .fa
+      margin-right: 6px
+
+
+
+.blog-post-entry
+  width: 100%
+  margin-bottom: 40px
+  p
+    line-height: 1.6
+    color: $grey
+
+.blog, .archive, .search
+  .blog-post-entry
+    +ellipsis(2rem, 1.5, 3)
+
+
+
+.blog-post-tags
+  width: 100%
+  margin-bottom: 40px
+  padding: 0
+  list-style-type: none
+
+  li
+    margin: 0
+    display: inline-block
+    color: $grey
+
+    a
+      color: $grey
+
+
+div.sharedaddy h3.sd-title
+  font-size: 3rem !important
+
+.social-links-list
+  width: 100%
+  margin: 0 0 55px 0
+  padding: 0
+  list-style-type: none
+
+  li
+    margin-left: 30px
+    float: left
+
+    &.links-list-title
+      margin-left: 0
+      line-height: 34px
+      font-weight: 700
+      color: #333333
+      text-transform: uppercase
+
+
+    &[data-customizer="twitter"] a
+      background-color: #2a7dca
+
+
+    &[data-customizer="facebook"] a
+      background-color: #06bef4
+
+
+    &[data-customizer="linkedin"] a
+      background-color: #0077b5
+
+
+    a
+      width: 34px
+      height: 34px
+      line-height: 34px
+      display: block
+      @include border-radius(50%)
+      color: #ffffff
+      font-size: 17px
+      text-align: center
+      @include transition(all 0.3s)
+
+      &:hover
+        opacity: 0.9
+
+
+
+
+
+.blog-post-author
+  width: 100%
+  background: #f9f9f9
+  margin-bottom: 45px
+  padding: 20px 40px
+
+  .avatar
+    margin-right: 30px
+    @include border-radius(50%)
+    float: left
+
+
+  h4
+    line-height: 1.7
+    margin: 10px 0 0 0
+    display: inline-block
+    font-size: 20px
+    color: $yellow
+
+
+  p
+    line-height: 1.6
+    color: $grey
+
+
+
+
+.paginate-links
+  width: 100%
+  display: flex
+  justify-content: center
+  margin-bottom: 20px
+
+  .page-numbers
+    border: 1px solid transparent
+    margin: 0 5px
+    width: 34px
+    height: 34px
+    line-height: 32px
+    display: inline-block
+    color: white 
+    text-align: center
+
+    &.current,
+    &:hover
+      text-decoration: none
+      border: 1px solid white 
+
+
+
+/* 12.5. single */
+.single
+  #blog
+    .blog-post≤
+      max-width: none
+      min-width: 0
+      flex: 0 0 800px
+
+/* 13. Sidebar */
+#sidebar
+  width: 90%
+  margin: 50px 0 40px 0
+  padding-left: 10%
+  border-left: 1px solid #ebebeb
+  float: right
+
+
+.page-template-left-sidebar
+  #sidebar
+    padding-right: 10%
+    padding-left: 0
+    border-right: 1px solid #ebebeb
+    border-left: none
+    float: left
+
+
+
+.widget
+  width: 100%
+  margin-bottom: 30px
+
+  &:last-child
+    margin-bottom: 0
+
+
+  .widget-title
+    width: 100%
+    margin-bottom: 50px
+    padding-bottom: 12px
+    position: relative
+
+    &:before
+      content: ""
+      width: 41px
+      height: 3px
+      background-color: $yellow
+      position: absolute
+      bottom: 0
+      left: 0
+
+
+    h3
+      line-height: 2.55
+      margin: 0
+      padding: 0
+      font-weight: 700
+      font-size: 3rem
+      color: #333333
+      text-transform: uppercase
+
+
+  a
+    color: #333333
+
+
+  img
+    max-width: 100%
+    height: auto
+
+
+  ul
+    margin: 0
+    padding: 0
+    list-style-type: none
+
+    &.children,
+    &.sub-menu
+      li
+        padding-bottom: 0
+        border-bottom: none
+
+
+
+    li
+      width: 100%
+      padding: 20px 0 20px 20px
+      border-bottom: 1px solid #ebebeb
+      position: relative
+
+      &:before
+        content: "\f105"
+        font-family: "FontAwesome"
+        color: $yellow
+        position: absolute
+        left: 0
+
+
+      a
+        line-height: 1.6
+        color: $grey
+        @include transition(all 0.3s)
+
+        &:hover
+          color: $yellow
+          text-decoration: none
+
+
+
+
+
+  .screen-reader-text
+    width: 100%
+
+
+  select
+    width: 100%
+
+
+  table
+    width: 100%
+
+    caption
+      color: $grey
+      margin-bottom: 10px
+      font-weight: 700
+
+
+    thead
+      color: $grey
+
+      th
+        padding-bottom: 5px
+        border-right: 1px solid #eee
+        border-bottom: 1px solid #eee
+        text-align: center
+
+        &:last-child
+          border-right: none
+
+
+
+
+    tbody
+      color: $grey
+      text-align: center
+      font-size: 12px
+      font-weight: 300
+
+      a
+        font-weight: 700
+
+
+      tr
+        border-bottom: 1px solid #eee
+
+        &:last-child
+          border-bottom: none
+
+
+        td
+          border-right: 1px solid #eee
+          padding: 7px
+
+          &:last-child
+            border-right: none
+
+
+
+
+
+    tfoot
+      font-size: 14px
+      color: $grey
+
+      #next
+        text-align: right
+
+
+
+    a
+      color: $grey
+      text-decoration: underline
+
+      &:hover
+        text-decoration: none
+
+
+
+    td#prev
+      padding-top: 10px
+
+      a
+        color: $grey
+
+
+
+    td#next
+      padding-top: 10px
+
+      a
+        color: $grey
+
+
+
+
+
+
+
+
+
+
+  .widget-recent-post
+    width: 100%
+    margin-bottom: 37px
+
+    &:last-of-type
+      margin-bottom: 0
+
+
+    .recent-post-image
+      width: 70px
+      margin-right: 22px
+      float: left
+
+      img
+        max-width: 100%
+        height: auto
+        @include border-radius(50%)
+
+
+    .recent-post-button
+      width: 100%
+      line-height: 1.466
+      color: $yellow
+
+        text-transform: lowercase
+
+
+.search-form
+  margin: 20px 20px 0 20px
+
+  .search-form-box
+    width: 100%
+    border: 1px solid #999
+    position: relative
+    #searchsubmit
+      background: 0 0
+      height: 100%
+      line-height: 37px
+      padding: 0
+      border: none
+      font-family: "FontAwesome"
+      color: #fff
+      width: 50px
+      position: absolute
+      right: 0
+    .fa-search
+      font-size: 3rem
+      padding: 3px
+      right: 10px
+      position: absolute
+      pointer-events: none
+      height: 100%
+      display: flex
+      flex-flow: column
+      justify-content: center
+    #s
+      width: 100%
+      height: 37px
+      background: transparent
+      border: none
+      color: #fff
+      text-transform: uppercase
+      outline: 0
+      padding: 25px
+      &::-webkit-input-placeholder
+        color: #999
+
+
+      &::-moz-placeholder
+        color: #999
+
+
+      &:-ms-input-placeholder
+        color: #999
+
+
+      &:-moz-placeholder
+        color: #999
+
+
+
+/* 14. Markup Format */
+.markup-format
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6
+    margin: 30px 0
+
+
+  h1
+    line-height: 92px
+
+
+  h2
+    line-height: 32px
+
+
+  h3
+    line-height: 30px
+    font-weight: 500
+
+
+  h4
+    line-height: 18px
+
+
+  h5
+    line-height: 16px
+
+
+  h6
+    line-height: 14px
+
+
+  p
+    line-height: 25px
+    margin: 30px 0
+
+
+  a
+    color: #e2c504
+    text-decoration: underline
+
+    &:hover
+      text-decoration: none
+
+
+
+  img
+    max-width: 100% !important
+    height: auto
+
+
+  img.alignright
+    float: right
+    margin: 0 0 1em 1em
+
+
+  img.alignleft
+    float: left
+    margin: 0 1em 1em 0
+
+
+  img.aligncenter
+    display: block
+    margin-left: auto
+    margin-right: auto
+
+
+  .alignright
+    float: right
+
+
+  .alignleft
+    float: left
+
+
+  .aligncenter
+    display: block
+    margin-left: auto
+    margin-right: auto
+
+
+  .wp-caption
+    max-width: 100%
+    height: auto
+
+
+  .post-password-form
+    width: 100%
+
+    label
+      float: left
+
+      input[type="password"]
+        height: 40px
+        margin: 0 10px 0 5px
+        padding: 0 20px
+        border: 1px solid #e6e6e6
+        border-radius: 0
+        outline: 0
+        appearance: none
+
+
+
+    input[type="submit"]
+      height: 40px
+      margin: 0
+
+
+
+  .gallery-item
+    width: 25%
+    padding: 10px
+    float: left
+
+
+  .link-pages
+    width: 100%
+    margin-bottom: 40px
+    float: left
+
+
+  iframe
+    max-width: 100%
+
+
+  blockquote,
+  q
+    margin: 0
+    padding: 0
+    line-height: 50px
+    font-size: 30px
+    color: $grey
+    border-left: none
+
+
+  blockquote
+    &:before,
+    &:after
+      content: '\"'
+
+  cite
+    font-style: normal
+    font-size: 14px
+    color: $grey
+
+
+  blockquote
+    p
+      margin: 0
+
+  ul
+    list-style-position: inside
+    list-style-type: disc
+
+    li
+      list-style-position: inside
+      list-style-type: disc
+
+      ul
+        padding-left: 20px
+
+
+  ol
+    list-style-position: inside
+    list-style-type: decimal
+
+    li
+      list-style-position: inside
+      list-style-type: decimal
+
+      ol
+        padding-left: 20px
+
+
+
+
+  table
+    width: 100%
+
+    caption
+      color: $grey
+      margin-bottom: 10px
+      font-weight: 700
+
+
+    thead
+      color: $grey
+
+      th
+        padding-bottom: 5px
+        border-right: 1px solid #eee
+        border-bottom: 1px solid #eee
+        text-align: center
+
+        &:last-child
+          border-right: none
+
+
+
+
+    tbody
+      color: $grey
+      text-align: center
+      font-size: 12px
+      font-weight: 300
+
+      a
+        font-weight: 700
+
+
+      tr
+        border-bottom: 1px solid #eee
+
+        &:last-child
+          border-bottom: none
+
+
+        td
+          border-right: 1px solid #eee
+          padding: 7px
+
+          &:last-child
+            border-right: none
+
+
+
+
+
+    tfoot
+      font-size: 14px
+      color: $grey
+
+      #next
+        text-align: right
+
+
+
+    a
+      color: $grey
+      text-decoration: underline
+
+      &:hover
+        text-decoration: none
+
+
+
+    td#prev
+      padding-top: 10px
+
+      a
+        color: $grey
+
+
+
+    td#next
+      padding-top: 10px
+
+      a
+        color: $grey
+
+
+
+
+
+/* 15. Related Posts */
+.blog-post-related-articles
+  width: 100%
+  margin-bottom: 50px
+
+  .related-article-title
+    width: 100%
+    margin-bottom: 20px
+    font-weight: 700
+    color: #333333
+    text-transform: uppercase
+    line-height: 1.6
+
+
+  .related-post
+    width: 100%
+    height: 203px
+    background-position: center center
+    @include background-size(cover)
+    display: block
+    position: relative
+    @include transition(all 0.3s)
+
+    &:hover .related-post-title
+      color: $yellow
+      @include transition(all 0.3s)
+
+
+    .related-post-title
+      width: 100%
+      background-color: rgba(0, 0, 0, 0.5)
+      padding: 15px 20px
+      position: absolute
+      bottom: 0
+      left: 0
+      color: #ffffff
+      line-height: 1.6
+      @include transition(all 0.3s)
+
+
+
+
+/* 16. Comments */
+#comments
+  width: 100%
+
+  #comments-list
+    width: 100%
+    margin-bottom: 50px
+
+    h3.medium
+      width: 100%
+      margin: 0 0 15px 0
+      line-height: 1.5
+      font-weight: 700
+      font-size: 17px
+      color: #333333
+      text-transform: uppercase
+
+
+    ul.comments
+      width: 100%
+      margin: 0
+      padding: 0
+      list-style-type: none
+
+      .comment
+        width: 100%
+
+        & > div
+          margin-bottom: 30px
+
+
+        .comment-gravatar
+          width: 100%
+
+          img
+            max-width: 100%
+            height: auto
+
+
+
+        .url
+          color: $yellow
+
+
+        .comment-entry
+          p
+            margin: 15px 0
+
+
+
+        .comment-reply-link
+          color: $yellow
+
+
+        ul.children
+          width: 100%
+          margin: 0
+          padding: 0 0 0 40px
+          list-style-type: none
+
+
+
+
+
+  #respond
+    width: 100%
+
+    #reply-title
+      width: 100%
+      margin: 0 0 15px 0
+      line-height: 1.5
+      font-weight: 700
+      font-size: 17px
+      color: #333333
+      text-transform: uppercase
+
+
+    .comment-form
+      width: 100%
+
+      .comment-notes
+        display: none
+
+
+      .input-full
+        width: 100%
+        height: 37px
+        margin: 0 0 30px 0
+        padding: 0 10px
+        border: 1px solid #d7d7d7
+        outline: 0
+
+        font-weight: 400
+        color: $grey
+
+
+      textarea
+        width: 100%
+        height: 125px
+        margin-bottom: 30px
+        padding: 10px
+        border: 1px solid #d7d7d7
+        outline: 0
+
+        font-weight: 400
+        color: $grey
+        resize: none
+        display: block
+
+
+      #input-submit
+        width: auto
+        height: 36px
+        background-color: $yellow
+        padding: 0 40px
+        display: inline-block
+        color: #ffffff
+        border: 1px solid #d7d7d7
+
+        font-weight: 700
+        color: #ffffff
+        text-transform: uppercase
+        @include transition(all 0.3s)
+
+        &:hover
+          opacity: 0.9
+
+
+
+
+
+
+@media only screen and (max-width: 992px)
+  #header .top-header
+    background-color: transparent !important
+    .header-navigation
+      display: none
+
+
+
+  .open-responsive-menu
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 60px
+    height: 60px
+    border-radius: 50%
+    background: $yellow
+    padding: 0
+    border: none
+    margin: 10px
+    outline: 0
+    display: block
+    position: fixed
+    top: 0
+    right: 0
+    .fa
+      line-height: 60px
+      font-size: 22px
+      color: $black
+
+
+  .responsive-menu
+    font-family: "Amatic SC"
+    width: 100%
+    position: fixed
+    top: 0
+    opacity: 0
+    transition: opacity .3s ease
+    pointer-events: none
+    z-index: 2
+    font-size: 4rem
+    display: block
+    &:before
+      z-index: -1
+      content: ""
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      pointer-events: none
+      background: transparentize(#000, .3)
+    ul
+      width: 100%
+      margin: 0
+      padding: 0
+      list-style: none
+      li
+        width: 100%
+
+        a
+          width: 100%
+          padding: 15px
+          display: block
+          color: white
+          text-align: center
+
+    &.active
+      opacity: 1
+      pointer-events: all
+
+
+  #header .bottom-header .header-button-one,
+  #header .bottom-header .header-button-two
+    margin-top: 10px
+    margin-bottom: 10px
+
+
+
+/* 17. Responsive */
+@media only screen and (max-width: 767px)
+  #header .top-header .header-logo img
+    max-width: 320px
+
+  #header .bottom-header h2
+    font-size: 60px
+
+
+  #about .widget_clubstiftung_skill:nth-child(1)
+    margin-top: 0
+
+  #about .widget_clubstiftung_skill:nth-child(2),
+  #about .widget_clubstiftung_skill:nth-child(3)
+    margin-top: 66px
+
+
+  #services .widget_clubstiftung_service:nth-child(1)
+    margin-top: 0
+
+  #services .widget_clubstiftung_service:nth-child(2),
+  #services .widget_clubstiftung_service:nth-child(3)
+    margin-top: 40px
+
+
+  #counter .col-sm-4
+    border-right: none
+
+  #counter .widget_clubstiftung_counter:nth-child(1)
+    margin-top: 0
+
+  #counter .widget_clubstiftung_counter:nth-child(2),
+  #counter .widget_clubstiftung_counter:nth-child(3)
+    margin-top: 40px
+
+
+  #team .widget_clubstiftung_person:nth-child(1)
+    margin-top: 0
+
+  #team .widget_clubstiftung_person:nth-child(2),
+  #team .widget_clubstiftung_person:nth-child(3)
+    margin-top: 40px
+
+
+  #contact-us .section-content .contact-us-box .box-left
+    width: 50%
+
+  #contact-us .section-content .contact-us-box .box-left
+    width: 50%
+
+  #contact-us .section-content .col-sm-5,
+  #contact-us .section-content .col-sm-3
+    margin-top: 40px
+
+  #contact-us .section-content .contact-us-social
+    text-align: left
+
+  #contact-us .section-content .wpcf7-form p:nth-of-type(1)
+    margin-top: 0
+
+  #contact-us .section-content .wpcf7-form p:nth-of-type(1),
+  #contact-us .section-content .wpcf7-form p:nth-of-type(2),
+  #contact-us .section-content .wpcf7-form p:nth-of-type(3)
+    width: 100%
+    margin: 26px 0 0 0
+    padding: 0
+
+  #footer .footer-logo
+    text-align: left
+
+  #footer .col-sm-3
+    margin-top: 40px
+
+  #footer .col-sm-3:first-child
+    margin-top: 0
+
+
+  #sidebar
+    width: 100%
+    margin-top: 0
+    padding-left: 0
+    border-left: none
+
+
+  .blog-post-related-articles .related-post
+    margin: 40px 0
+
+
+  #comments #comments-list ul.comments .comment .comment-gravatar
+    margin-bottom: 20px
+
+
+  #blog
+    padding-bottom: 0
+
+
+
+@media only screen and (max-width: 320px)
+  #header .bottom-header h2
+    font-size: 40px
+
+
+  #team .section-content .person .person-image
+    width: 100%
+    margin-right: 0
+    margin-bottom: 20px
+
+  #team .section-content .person .person-content
+    text-align: center
+
+  #team .section-content .person .person-content .person-content-social li
+    display: inline-block
+    float: none
+.row
+  &:before, &:after
