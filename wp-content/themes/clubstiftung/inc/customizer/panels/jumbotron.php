@@ -111,7 +111,7 @@ $wp_customize->add_control(
 $wp_customize->add_setting( $prefix .'_jumbotron_general_entry',
     array(
         'sanitize_callback' => 'clubstiftung_sanitize_html',
-        'default'           => __( 'lldy is a great one-page theme, perfect for developers and designers but also for someone who just wants a new website for his business. Try it now!', 'clubstiftung' ),
+        'default'           => __( 'clubstiftung is a great one-page theme, perfect for developers and designers but also for someone who just wants a new website for his business. Try it now!', 'clubstiftung' ),
         'transport'         => 'postMessage'
     )
 );

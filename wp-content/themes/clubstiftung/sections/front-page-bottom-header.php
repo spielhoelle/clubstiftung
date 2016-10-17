@@ -11,7 +11,7 @@ if ( current_user_can( 'edit_theme_options' ) ) {
 	$first_row_from_title = get_theme_mod( 'clubstiftung_jumbotron_general_first_row_from_title', __( 'Clean', 'clubstiftung' ) );
 	$second_row_from_title = get_theme_mod( 'clubstiftung_jumbotron_general_second_row_from_title', __( 'Slick', 'clubstiftung' ) );
 	$third_row_from_title = get_theme_mod( 'clubstiftung_jumbotron_general_third_row_from_title', __( 'Pixel Perfect', 'clubstiftung' ) );
-	$entry = get_theme_mod( 'clubstiftung_jumbotron_general_entry', __( 'lldy is a great one-page theme, perfect for developers and designers but also for someone who just wants a new website for his business. Try it now!', 'clubstiftung' ) );
+	$entry = get_theme_mod( 'clubstiftung_jumbotron_general_entry', __( 'clubstiftung is a great one-page theme, perfect for developers and designers but also for someone who just wants a new website for his business. Try it now!', 'clubstiftung' ) );
 	$first_button_title = get_theme_mod( 'clubstiftung_jumbotron_general_first_button_title', __( 'Learn more', 'clubstiftung' ) );
 	$first_button_url = get_theme_mod( 'clubstiftung_jumbotron_general_first_button_url', esc_url( '#' ) );
 	$second_button_title = get_theme_mod( 'clubstiftung_jumbotron_general_second_button_title', __( 'Download', 'clubstiftung' ) );
