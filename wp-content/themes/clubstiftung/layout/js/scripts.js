@@ -174,7 +174,7 @@
 
 (function() {
   jQuery(document).ready(function($) {
-    var OwlCarousel, counterNumber, clubstiftungProgressBar;
+    var OwlCarousel, clubstiftungProgressBar, counterNumber;
     clubstiftungProgressBar = function() {
       if ($('#about .skill').length) {
         $('#about .skill').each(function() {
@@ -251,9 +251,6 @@
       windowHeight = $(window).height();
       documentWidth = $(document).width();
       documentHeight = $(document).height();
-      if ($('#wpadminbar #scroll-output').length < 1) {
-        $('#wpadminbar').append('<a id="scroll-output"></a>');
-      }
       if (!$('.open-responsive-menu').is(":visible")) {
         $(window).on('scroll', throttle((function(event) {
           progress();
@@ -261,7 +258,7 @@
       }
       $('.bottom-header .fa').click(function() {
         return $('html,body').animate({
-          scrollTop: $('#about').offset().top
+          scrollTop: $('#header').next().offset().top
         }, 1000);
       });
       $(window).on('scroll', throttle((function(event) {
@@ -272,7 +269,6 @@
         headerHeight = $('#header').height();
         scrollTop = $(window).scrollTop();
         windowH = $(document).height();
-        $('#scroll-output').html('scrollTop: ' + scrollTop);
         if (scrollTop < headerHeight) {
           percent = scrollTop / headerHeight;
           $('.top-header').css({
@@ -389,7 +385,7 @@
         if ($('#header .header-navigation ul li.menu-item-has-children').length) {
           subSubMenu = $('#header .header-navigation ul li.menu-item-has-children ul');
           $(subSubMenu).each(function() {
-            if (windowWidth - ($(this).offset()['left']) < 250) {
+            if (windowWidth - ($(this).offset().left) < 250) {
               $(this).css('left', '-250px');
             }
           });
@@ -432,7 +428,7 @@
           'opacity': 1
         });
         $('.wpcf7-form-control-wrap').css({
-          'opacity': .2
+          'opacity': 0.2
         });
       });
       $('#map_canvas').click(function(e) {

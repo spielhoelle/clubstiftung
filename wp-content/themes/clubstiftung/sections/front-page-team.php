@@ -44,17 +44,6 @@ if ( current_user_can( 'edit_theme_options' ) ) {
 				<?php
 				if( is_active_sidebar( 'front-page-team-sidebar' ) ):
 					dynamic_sidebar( 'front-page-team-sidebar' );
-				elseif ( current_user_can( 'edit_theme_options' ) ):
-					$the_widget_args = array(
-						'before_widget'	=> '<div class="widget_clubstiftung_person">',
-						'after_widget'	=> '</div>',
-						'before_title'	=> '',
-						'after_title'	=> ''
-					);
-
-					the_widget( 'clubstiftung_Widget_Person', 'title='. __( 'Mark Lawrance', 'clubstiftung' ) .'&image='. esc_url( '/layout/images/front-page/front-page-team-1.jpg' ) .'&position='. __( 'Web Designer', 'clubstiftung' ) .'&entry='. __( 'Creative, detail-oriented, always focused.', 'clubstiftung' ) .'&facebook_url='. esc_url( '#' ) .'&twitter_url='. esc_url( '#' ) .'&linkedin_url='. esc_url( '#' ) .'&color=#f18b6d', $the_widget_args );
-					the_widget( 'clubstiftung_Widget_Person', 'title='. __( 'Jane  Stenton', 'clubstiftung' ) .'&image='. esc_url( '/layout/images/front-page/front-page-team-2.jpg' ) .'&position='. __( 'SEO Specialist', 'clubstiftung' ) .'&entry='. __( 'Curious, tech-geeck and gets serious when it comes to work.', 'clubstiftung' ) .'&facebook_url='. esc_url( '#' ) .'&twitter_url='. esc_url( '#' ) .'&linkedin_url='. esc_url( '#' ) .'&color=#f1d204', $the_widget_args );
-					the_widget( 'clubstiftung_Widget_Person', 'title='. __( 'John Smith', 'clubstiftung' ) .'&image='. esc_url( '/layout/images/front-page/front-page-team-3.jpg' ) .'&position='. __( 'Developer', 'clubstiftung' ) .'&entry='. __( 'Enthusiastic, passionate with great sense of humor.', 'clubstiftung' ) .'&facebook_url='. esc_url( '#' ) .'&twitter_url='. esc_url( '#' ) .'&linkedin_url='. esc_url( '#' ) .'&color=#6a4d8a', $the_widget_args );
 				endif;
 				?>
 			</div><!--/.row-->

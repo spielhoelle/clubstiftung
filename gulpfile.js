@@ -20,13 +20,13 @@ var notify = require('gulp-notify');
 var gutil = require('gulp-util');
 
 
-var sassFiles = ['wp-content/themes/illdy/**/*.sass'];
-var coffeeFiles = ['wp-content/themes/illdy/**/*.coffee'];
-var htmlFiles = ['wp-content/themes/illdy/**/*.html'];
+var sassFiles = ['wp-content/themes/clubstiftung/**/*.sass'];
+var coffeeFiles = ['wp-content/themes/clubstiftung/**/*.coffee'];
+var htmlFiles = ['wp-content/themes/clubstiftung/**/*.html'];
 var imageFiles = ['images/src/**/*'];
 
-var sassTarget = 'wp-content/themes/illdy/layout/css';
-var coffeeTarget = 'wp-content/themes/illdy/layout/js';
+var sassTarget = 'wp-content/themes/clubstiftung/layout/css';
+var coffeeTarget = 'wp-content/themes/clubstiftung/layout/js';
 var htmlTarget = './';
 
 var domain = "dev.clubcommission.de";
@@ -42,7 +42,7 @@ gulp.task('sass',function(){
     .pipe(sourcemaps.init())
     .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
     .pipe(cleanCss({processImport: false}))
-    
+
     .pipe(autoPrefixer())
     // .pipe(cssComb())
     // .pipe(cmq({log:true}))
@@ -95,7 +95,7 @@ gulp.task('default',function(){
   // browserSync.init({
   //     proxy: domain,
   //     browser: "google chrome",
-  //     open: false, 
+  //     open: false,
   //     snippetOptions: {
   //       rule: {
   //         match: /<\/head>/i,

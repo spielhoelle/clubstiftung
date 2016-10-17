@@ -4,11 +4,6 @@
     windowHeight = $(window).height()
     documentWidth = $(document).width()
     documentHeight = $(document).height()
-    # Called Functions
-    # If is IOS
-
-    if $('#wpadminbar #scroll-output').length < 1
-      $('#wpadminbar').append '<a id="scroll-output"></a>'
 
     if !$('.open-responsive-menu').is(":visible")
       $(window).on 'scroll', throttle(((event) ->
@@ -16,7 +11,7 @@
         return
       ), 20)
     $('.bottom-header .fa').click ->
-      $('html,body').animate { scrollTop: $('#about').offset().top }, 1000
+      $('html,body').animate { scrollTop: $('#header').next().offset().top }, 1000
 
     $(window).on 'scroll', throttle(((event) ->
       sectionFadeIn()
@@ -27,7 +22,6 @@
       headerHeight = $('#header').height()
       scrollTop = $(window).scrollTop()
       windowH = $(document).height()
-      $('#scroll-output').html 'scrollTop: ' + scrollTop
       if scrollTop < headerHeight
         percent = scrollTop / headerHeight
         $('.top-header').css 'background-color': 'rgba(33,33,33,' + percent + ')'
@@ -151,7 +145,7 @@
         subSubMenu =
           $('#header .header-navigation ul li.menu-item-has-children ul')
         $(subSubMenu).each ->
-          if windowWidth - ($(this).offset()['left']) < 250
+          if windowWidth - ($(this).offset().left) < 250
             $(this).css 'left', '-250px'
           return
       return
@@ -194,7 +188,7 @@
     $('.wpcf7 input[type="submit"]').parent().append '<div class="loadingindicator"><i class="fa fa-circle-o-notch fa-2x fa-spin"></i></div>'
     $('.wpcf7 input[type="submit"]').on 'click', ->
       $('.wpcf7 .fa-circle-o-notch').css 'opacity': 1
-      $('.wpcf7-form-control-wrap').css 'opacity': .2
+      $('.wpcf7-form-control-wrap').css 'opacity': 0.2
       return
 
     $('#map_canvas').click (e) ->

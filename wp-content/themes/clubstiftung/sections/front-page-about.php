@@ -43,10 +43,15 @@ if ( current_user_can( 'edit_theme_options' ) ) {
 						if( is_active_sidebar( 'front-page-about-sidebar' ) ):
 							dynamic_sidebar( 'front-page-about-sidebar' );
 						endif;
+
+						?>
+					</div><!--/.row-->
+					<div class="row">
+						<?php
 						echo "<h3>Newsletter</h3>";
 						echo do_shortcode('[newsletter-form]');
 						?>
-					</div><!--/.row-->
+					</div>
 				</div><!--/.container-->
 		</div><!--/.section-header-->
 	<?php endif; ?>
