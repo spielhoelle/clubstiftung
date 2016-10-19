@@ -1,4 +1,4 @@
 [submodule "wp-content/plugins/wp-plugin-mailchimp-ajax-subscribe"]
 	path = wp-content/plugins/wp-plugin-mailchimp-ajax-subscribe
-	url = git@github.com:spielhoelle/wp-plugin-mailchimp-ajax-subscribe.git
+	url = https://github.com/spielhoelle/wp-plugin-mailchimp-ajax-subscribe
 
