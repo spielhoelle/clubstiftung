@@ -27,7 +27,7 @@
 
 
 .background
-  text-shaawdow: 2px 1px 1px black
+  text-shadow: 2px 1px 1px black
   background-size: cover !important
   background-attachment: fixed !important
   background-position: center center !important
@@ -488,10 +488,10 @@ input
     &:nth-child(3)
       margin-top: 0
 .tmcajaxresponse
-  padding: 20px
+  padding: 0 20px 20px 20px 
   .fa.fa-error,
   .fa.fa-check
-    line-height: 0
+    line-height: 1
     position: relative !important
   &.success
     border: 3px solid #7ac87a
@@ -1363,8 +1363,10 @@ input
   height: 64px
   padding: 0 20px
   width: 275px
-  text-transform: uppercase
-
+  border: 1px solid transparent
+  border-radius: 3px
+  &:focus
+    border: 1px solid $black
 .tmcajax
   label
     display: none

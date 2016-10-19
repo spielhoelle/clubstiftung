@@ -33,7 +33,7 @@ if ( current_user_can( 'edit_theme_options' ) ) {
 	$general_entry = get_theme_mod( 'clubstiftung_contact_us_general_entry' );
 	$general_contact_form_7 = get_theme_mod( 'clubstiftung_contact_us_general_contact_form_7' );
 	$general_address_title = get_theme_mod( 'clubstiftung_contact_us_general_address_title' );
-	$customer_support_title = get_theme_mod( 'clubstiftung_contact_us_general_customer_support_title' );	
+	$customer_support_title = get_theme_mod( 'clubstiftung_contact_us_general_customer_support_title' );
 }
 
 if ( $general_title != '' || $general_entry != '' || $general_address_title != '' || $address1 != '' || $address2 != '' || $customer_support_title != '' || $email != '' || $phone != ''
@@ -103,13 +103,13 @@ if ( $general_title != '' || $general_entry != '' || $general_address_title != '
 						<div class="col-sm-3">
 							<?php if( $contact_bar_twitter_url || $contact_bar_facebook_url || $contact_bar_linkedin_url ): ?>
 								<div class="contact-us-social">
-									<?php if( $contact_bar_twitter_url ): ?>
+									<?php if( $contact_bar_twitter_url !== '' && $contact_bar_twitter_url !== '#' ): ?>
 										<a href="<?php echo esc_url( $contact_bar_twitter_url ); ?>" title="<?php _e( 'Twitter', 'clubstiftung' ); ?>" target="_blank"><i class="fa fa-twitter"></i></a>
 									<?php endif; ?>
-									<?php if( $contact_bar_facebook_url ): ?>
+									<?php if( $contact_bar_facebook_url !== '' && $contact_bar_facebook_url !== '#' ): ?>
 										<a href="<?php echo esc_url( $contact_bar_facebook_url ); ?>" title="<?php _e( 'Facebook', 'clubstiftung' ); ?>" target="_blank"><i class="fa fa-facebook"></i></a>
 									<?php endif; ?>
-									<?php if( $contact_bar_linkedin_url ): ?>
+									<?php if( $contact_bar_linkedin_url !== '' && $contact_bar_linkedin_url !== '#' ): ?>
 										<a href="<?php echo esc_url( $contact_bar_linkedin_url ); ?>" title="<?php _e( 'LinkedIn', 'clubstiftung' ); ?>" target="_blank"><i class="fa fa-linkedin"></i></a>
 									<?php endif; ?>
 								</div><!--/.contact-us-social-->

@@ -11,7 +11,7 @@
 if ( current_user_can( 'edit_theme_options' ) ) {
 	$display_copyright = get_theme_mod( 'clubstiftung_general_footer_display_copyright', 1 );
 	$footer_copyright = get_theme_mod( 'clubstiftung_footer_copyright', __( '&copy; Copyright 2016. All Rights Reserved.', 'clubstiftung' ) );
-	$img_footer_logo = get_theme_mod( 'clubstiftung_img_footer_logo', esc_url( get_template_directory_uri() . '/layout/images/footer-logo.png' ) );
+	$img_footer_logo = get_theme_mod( 'clubstiftung_img_footer_logo' );
 } else {
 	$display_copyright = get_theme_mod( 'clubstiftung_general_footer_display_copyright' );
 	$footer_copyright = get_theme_mod( 'clubstiftung_footer_copyright' );
@@ -34,7 +34,7 @@ if ( current_user_can( 'edit_theme_options' ) ) {
 						dynamic_sidebar( 'footer-sidebar-1' );
 					endif;
 					?>
-					<?php if( $img_footer_logo ): ?>
+					<?php	if( $img_footer_logo ): ?>
 						<a href="<?php echo esc_url( home_url() ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" class="footer-logo">
 							<img src="<?php echo esc_url( $img_footer_logo ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" />
 						</a>
