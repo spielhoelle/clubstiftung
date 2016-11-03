@@ -12,7 +12,7 @@
 			<?php the_post_thumbnail( 'clubstiftung-blog-list' ); ?>
 		</div><!--/.blog-post-image-->
 	<?php endif; ?>
-	<h2 class="blog-post-title"><?php the_title(); ?></h2>
+	<!-- <h2 class="blog-post-title"><?php the_title(); ?></h2> -->
 	<div class="blog-post-entry markup-format">
 		<?php
 		the_content();

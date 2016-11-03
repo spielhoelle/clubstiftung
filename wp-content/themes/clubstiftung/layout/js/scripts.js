@@ -4,7 +4,6 @@
     return jQuery(document).ready(function() {
       var address, initialize;
       if ($('#map_canvas').length) {
-        address = 'San Diego, CA';
         address = $('#map_canvas').attr('data');
         initialize = function() {
           var geocoder, latlng, map, myOptions;

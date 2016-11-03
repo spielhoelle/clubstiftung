@@ -1,12 +1,11 @@
 (($) ->
   jQuery(document).ready  ->
     if $('#map_canvas').length
-      address = 'San Diego, CA'
       address = $('#map_canvas').attr('data')
       initialize = ->
         geocoder = new (google.maps.Geocoder)
         latlng = new (google.maps.LatLng)(-34.397, 150.644)
-        myOptions = 
+        myOptions =
           zoom: 12
           center: latlng
           mapTypeControlOptions: style: google.maps.MapTypeControlStyle.DROPDOWN_MENU

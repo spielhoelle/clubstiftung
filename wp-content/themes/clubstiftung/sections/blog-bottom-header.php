@@ -13,7 +13,7 @@
 				<div class="col-sm-12">
 					<h2>News</h2>
 				</div><!--/.col-sm-12-->
-			<?php elseif (is_single()): ?>
+			<?php elseif (is_single() || is_page()): ?>
 					<h2><?php the_title() ?></h2>
 			<?php else: ?>
 				<div class="col-sm-12">
