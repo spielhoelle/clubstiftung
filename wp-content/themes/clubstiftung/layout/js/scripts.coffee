@@ -35,7 +35,6 @@
       $('.home .faders').children().each (index, section) ->
         isVisible = $(section).visible(true, false, 'both');
         if isVisible == true
-          console.log isVisible
           $(section).addClass('faded-in')
         return
       return
@@ -73,7 +72,9 @@
         if location.pathname.replace(/^\//, '') ==  @pathname.replace(/^\//, '') and location.hostname == @hostname
           target = $(@hash)
           if target.length
-            $('html,body').animate { scrollTop: target.offset().top }, 1000
+            offset = $('#header .top-header').height()
+            console.log target
+            $('html,body').animate { scrollTop: target.offset().top - offset }, 1000
             return false
           else
             window.location = "/" + @hash

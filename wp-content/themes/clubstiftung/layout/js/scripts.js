@@ -290,7 +290,6 @@
           var isVisible;
           isVisible = $(section).visible(true, false, 'both');
           if (isVisible === true) {
-            console.log(isVisible);
             $(section).addClass('faded-in');
           }
         });
@@ -316,15 +315,17 @@
           }
         });
         $('a[href*="#"]:not([href="#"])').on('click', function() {
-          var target;
+          var offset, target;
           if ($('.responsive-menu').hasClass('active')) {
             $('.responsive-menu').removeClass('active');
           }
           if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
             target = $(this.hash);
             if (target.length) {
+              offset = $('#header .top-header').height();
+              console.log(target);
               $('html,body').animate({
-                scrollTop: target.offset().top
+                scrollTop: target.offset().top - offset
               }, 1000);
               return false;
             } else {
