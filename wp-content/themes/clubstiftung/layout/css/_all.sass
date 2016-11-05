@@ -75,7 +75,11 @@ body
   font-size: 20px
   color: $grey
   font-family: "Josefin Sans"
-
+  -ms-hyphens: auto
+  -webkit-hyphens: auto
+  hyphens: auto
+  @media (max-width: 767px)
+    font-size: 16px
 
 h1, h2, h3, h4, h5, h6, .counter-number
   font-family: "Amatic SC"
@@ -332,8 +336,6 @@ input
       font-size: 81px
       color: #ffffff
       text-transform: uppercase
-    p
-      margin-bottom: 0
 
     span.span-dot
       color: #ffde00
@@ -343,6 +345,8 @@ input
       margin-bottom: 60px
       font-size: 25px
       color: #ffffff
+      margin-bottom: 0
+
 
 
 .header-button-one
@@ -598,14 +602,11 @@ input
       align-items: flex-end
       .info
         flex: 1
-        max-width: 85%
+        max-width: 100%
         color: darken(white, 20)
 
         p
-          display: block
-          overflow: hidden
-          text-overflow: ellipsis
-          white-space: nowrap
+
         > *
           transform: scale(.9)
           transition: transform .3s ease
@@ -1222,8 +1223,6 @@ input
         font-size: 17px
         color: #ffffff
         @include transition(all 0.3s)
-        i:before
-          font-size: 2rem
         &:hover
           color: $yellow
 
@@ -2435,7 +2434,6 @@ div.sharedaddy h3.sd-title
     font-family: "Amatic SC"
     width: 100%
     position: fixed
-    top: 0
     opacity: 0
     transition: opacity .3s ease
     pointer-events: none
@@ -2466,6 +2464,7 @@ div.sharedaddy h3.sd-title
           display: block
           color: white
           text-align: center
+          font-size: .8em
 
     &.active
       opacity: 1

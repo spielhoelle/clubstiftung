@@ -86,6 +86,9 @@ $preloader_enable = get_theme_mod( 'clubstiftung_preloader_enable', 1 );
 						'walker'			=> new clubstiftung_Extended_Menu_Walker(),
 						'fallback_cb'		=> 'clubstiftung_Extended_Menu_Walker::fallback'
 					) );
+					echo "<li>";
+					echo qtranxf_generateLanguageSelectCode('text');
+					echo "</li>";
 					?>
 				</ul>
 			</nav><!--/.responsive-menu-->

@@ -38,7 +38,7 @@ if ( current_user_can( 'edit_theme_options' ) ) {
 			</div>
 			<div class="section-header">
 				<div class="container">
-					<div class="row">
+					<div class="row padding--bottom">
 						<?php
 						if( is_active_sidebar( 'front-page-about-sidebar' ) ):
 							dynamic_sidebar( 'front-page-about-sidebar' );
