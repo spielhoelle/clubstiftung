@@ -7,19 +7,11 @@
  */
 ?>
 <?php
-if ( current_user_can( 'edit_theme_options' ) ) {
 	$general_title = get_theme_mod( 'clubstiftung_latest_news_general_title', __( 'Latest News', 'clubstiftung' ) );
 	$general_entry = get_theme_mod( 'clubstiftung_latest_news_general_entry', __( 'If you are interested in the latest articles in the industry, take a sneak peek at our blog. You have got nothing to loose!', 'clubstiftung' ) );
 	$button_text = get_theme_mod( 'clubstiftung_latest_news_button_text', __( 'See blog', 'clubstiftung' ) );
 	$button_url = get_theme_mod( 'clubstiftung_latest_news_button_url', esc_url( '#' ) );
 	$number_of_posts = get_theme_mod( 'clubstiftung_latest_news_number_of_posts', absint( 3 ) );
-}else{
-	$general_title = get_theme_mod( 'clubstiftung_latest_news_general_title' );
-	$general_entry = get_theme_mod( 'clubstiftung_latest_news_general_entry' );
-	$button_text = get_theme_mod( 'clubstiftung_latest_news_button_text' );
-	$button_url = get_theme_mod( 'clubstiftung_latest_news_button_url' );
-	$number_of_posts = get_theme_mod( 'clubstiftung_latest_news_number_of_posts', absint( 3 ) );
-}
 
 $post_query_args = array (
 	'post_type'					=> array( 'post' ),

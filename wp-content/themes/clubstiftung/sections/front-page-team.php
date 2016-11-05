@@ -7,13 +7,8 @@
  */
 ?>
 <?php
-if ( current_user_can( 'edit_theme_options' ) ) {
 	$general_title = get_theme_mod( 'clubstiftung_team_general_title', __( 'Team', 'clubstiftung' ) );
 	$general_entry = get_theme_mod( 'clubstiftung_team_general_entry', __( 'Meet the people that are going to take your business to the next level.', 'clubstiftung' ) );
-}else{
-	$general_title = get_theme_mod( 'clubstiftung_team_general_title' );
-	$general_entry = get_theme_mod( 'clubstiftung_team_general_entry' );
-}
 
 ?>
 

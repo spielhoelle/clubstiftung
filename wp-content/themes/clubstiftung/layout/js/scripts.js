@@ -231,7 +231,7 @@
       OwlCarousel();
       $(window).scroll(function() {
         var counterVisible;
-        counterVisible = $('#counter').visible();
+        counterVisible = $('#counter').visible(true, false, 'both');
         if (counterVisible === true) {
           counterNumber();
         }
@@ -288,8 +288,9 @@
       sectionFadeIn = function() {
         $('.home .faders').children().each(function(index, section) {
           var isVisible;
-          isVisible = $(section).visible();
-          if (isVisible) {
+          isVisible = $(section).visible(true, false, 'both');
+          if (isVisible === true) {
+            console.log(isVisible);
             $(section).addClass('faded-in');
           }
         });
@@ -334,10 +335,12 @@
       };
       openResponsiveMenu = function() {
         $('.open-responsive-menu').click(function() {
+          $('body').addClass('menu-open');
           $('.responsive-menu').toggleClass('active');
           return $('.responsive-menu').toggleClass('header-responsive-menu');
         });
         $('body').click(function() {
+          $('body').removeClass('menu-open');
           if ($('.responsive-menu').hasClass('active')) {
             return $('.responsive-menu').removeClass('active header-responsive-menu');
           }
@@ -450,7 +453,9 @@
       });
     });
     $(window).load(function() {
-      return $('.faders').children().addClass('faded-in');
+      if (!$('body').hasClass('home')) {
+        return $('.faders').children().addClass('faded-in');
+      }
     });
     return throttle = function(fn, threshhold, scope) {
       var deferTimer, last;

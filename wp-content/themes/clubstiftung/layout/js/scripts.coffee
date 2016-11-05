@@ -33,8 +33,9 @@
 
     sectionFadeIn = ->
       $('.home .faders').children().each (index, section) ->
-        isVisible = $(section).visible()
-        if isVisible
+        isVisible = $(section).visible(true, false, 'both');
+        if isVisible == true
+          console.log isVisible
           $(section).addClass('faded-in')
         return
       return
@@ -83,10 +84,13 @@
 
     openResponsiveMenu = ->
       $('.open-responsive-menu').click ->
+        $('body').addClass('menu-open');
         $('.responsive-menu').toggleClass('active');
         $('.responsive-menu').toggleClass('header-responsive-menu');
 
       $('body').click ->
+        $('body').removeClass('menu-open');
+
         if($('.responsive-menu').hasClass('active'))
           $('.responsive-menu').removeClass('active header-responsive-menu');
 
@@ -209,7 +213,8 @@
     return
 
   $(window).load ->
-    $('.faders').children().addClass('faded-in')
+    if !$('body').hasClass('home')
+      $('.faders').children().addClass('faded-in')
 
 
   throttle = (fn, threshhold, scope) ->

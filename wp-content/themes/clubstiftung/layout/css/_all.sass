@@ -78,6 +78,8 @@ body
   -ms-hyphens: auto
   -webkit-hyphens: auto
   hyphens: auto
+  &.menu-open
+    overflow: hidden
   @media (max-width: 767px)
     font-size: 16px
 
@@ -148,6 +150,7 @@ input
     opacity: 0
     $time: 0s
     $i: 0
+
     @for $i from 0 through 20
       &:nth-child(#{$i})
         transition: opacity .5s ease $time
@@ -597,7 +600,7 @@ input
       z-index: 1
       color: white
       display: flex
-      padding: 10px 20px
+      padding: 10px
       text-align: left
       align-items: flex-end
       .info
@@ -606,6 +609,7 @@ input
         color: darken(white, 20)
 
         p
+          line-height: 1.1
 
         > *
           transform: scale(.9)
@@ -921,10 +925,6 @@ input
       padding-bottom: 40px
       margin-bottom: 40px
       text-align: left
-      @include transition( background-color .3s ease)
-
-
-
 
 
 .padding--bottom
@@ -2448,6 +2448,7 @@ div.sharedaddy h3.sd-title
       left: 0
       right: 0
       bottom: 0
+      height: 100%
       pointer-events: none
       background: transparentize(#000, .3)
     ul
@@ -2457,11 +2458,11 @@ div.sharedaddy h3.sd-title
       list-style: none
       li
         width: 100%
+        text-align: center
 
         a
           width: 100%
           padding: 15px
-          display: block
           color: white
           text-align: center
           font-size: .8em
@@ -2469,8 +2470,10 @@ div.sharedaddy h3.sd-title
     &.active
       opacity: 1
       pointer-events: all
-
-
+      height: 100%
+      ul
+        overflow: scroll
+        height: 100%
   #header .bottom-header .header-button-one,
   #header .bottom-header .header-button-two
     margin-top: 10px

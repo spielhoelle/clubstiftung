@@ -7,13 +7,8 @@
  */
 ?>
 <?php
-if ( current_user_can( 'edit_theme_options' ) ) {
 	$general_title = get_theme_mod( 'clubstiftung_about_general_title', __( 'About', 'clubstiftung' ) );
 	$general_entry = get_theme_mod( 'clubstiftung_about_general_entry', __( 'It is an amazng one-page theme with great features that offers an incredible experience. It is easy to install, make changes, adapt for your business. A modern design with clean lines and styling for a wide variety of content, exactly how a business design should be. You can add as many images as you want to the main header area and turn them into slider.', 'clubstiftung' ) );
-}else{
-	$general_title = get_theme_mod( 'clubstiftung_about_general_title' );
-	$general_entry = get_theme_mod( 'clubstiftung_about_general_entry' );
-}
 ?>
 
 <?php if ( $general_title != '' || $general_entry != '' || is_active_sidebar( 'front-page-about-sidebar' ) ) { ?>

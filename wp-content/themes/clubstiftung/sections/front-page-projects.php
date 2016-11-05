@@ -7,13 +7,8 @@
  */
 ?>
 <?php
-if ( current_user_can( 'edit_theme_options' ) ) {
 	$general_title = get_theme_mod( 'clubstiftung_projects_general_title', esc_html__( 'Projects', 'clubstiftung' ) );
 	$general_entry = get_theme_mod( 'clubstiftung_projects_general_entry', esc_html__( 'You\'ll love our work. Check it out!', 'clubstiftung' ) );
-}else{
-	$general_title = get_theme_mod( 'clubstiftung_projects_general_title' );
-	$general_entry = get_theme_mod( 'clubstiftung_projects_general_entry' );
-}
 
 ?>
 
@@ -44,18 +39,6 @@ if ( current_user_can( 'edit_theme_options' ) ) {
 				<?php
 				if( is_active_sidebar( 'front-page-projects-sidebar' ) ):
 					dynamic_sidebar( 'front-page-projects-sidebar' );
-				elseif( current_user_can( 'edit_theme_options' ) ):
-					$the_widget_args = array(
-						'before_widget'	=> '<div class="no-padding widget_clubstiftung_project">',
-						'after_widget'	=> '</div>',
-						'before_title'	=> '',
-						'after_title'	=> ''
-					);
-
-					the_widget( 'clubstiftung_Widget_Project', 'title='. __( 'Project 1', 'clubstiftung' ) .'&image='. esc_url( '/layout/images/front-page/front-page-project-1.jpg' ) .'&url='. esc_url( '#' ), $the_widget_args );
-					the_widget( 'clubstiftung_Widget_Project', 'title='. __( 'Project 2', 'clubstiftung' ) .'&image='. esc_url( '/layout/images/front-page/front-page-project-2.jpg' ) .'&url='. esc_url( '#' ), $the_widget_args );
-					the_widget( 'clubstiftung_Widget_Project', 'title='. __( 'Project 3', 'clubstiftung' ) .'&image='. esc_url( '/layout/images/front-page/front-page-project-3.jpg' ) .'&url='. esc_url( '#' ), $the_widget_args );
-					the_widget( 'clubstiftung_Widget_Project', 'title='. __( 'Project 4', 'clubstiftung' ) .'&image='. esc_url( '/layout/images/front-page/front-page-project-4.jpg' ) .'&url='. esc_url( '#' ), $the_widget_args );
 				endif;
 				?>
 			</div><!--/.row-->

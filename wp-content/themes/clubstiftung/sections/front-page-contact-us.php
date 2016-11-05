@@ -7,7 +7,6 @@
  */
 ?>
 <?php
-if ( current_user_can( 'edit_theme_options' ) ) {
 
 	$contact_bar_facebook_url = get_theme_mod( 'clubstiftung_contact_bar_facebook_url', esc_url( '#' ) );
 	$contact_bar_twitter_url = get_theme_mod( 'clubstiftung_contact_bar_twitter_url', esc_url( '#' ) );
@@ -21,20 +20,6 @@ if ( current_user_can( 'edit_theme_options' ) ) {
 	$general_contact_form_7 = get_theme_mod( 'clubstiftung_contact_us_general_contact_form_7' );
 	$general_address_title = get_theme_mod( 'clubstiftung_contact_us_general_address_title', __( 'Address', 'clubstiftung' ) );
 	$customer_support_title = get_theme_mod( 'clubstiftung_contact_us_general_customer_support_title', __( 'Customer Support', 'clubstiftung' ) );
-}else{
-	$contact_bar_facebook_url = get_theme_mod( 'clubstiftung_contact_bar_facebook_url' );
-	$contact_bar_twitter_url = get_theme_mod( 'clubstiftung_contact_bar_twitter_url' );
-	$contact_bar_linkedin_url = get_theme_mod( 'clubstiftung_contact_bar_linkedin_url' );
-	$email = get_theme_mod( 'clubstiftung_email' );
-	$phone = get_theme_mod( 'clubstiftung_phone' );
-	$address1 = get_theme_mod( 'clubstiftung_address1' );
-	$address2 = get_theme_mod( 'clubstiftung_address2' );
-	$general_title = get_theme_mod( 'clubstiftung_contact_us_general_title' );
-	$general_entry = get_theme_mod( 'clubstiftung_contact_us_general_entry' );
-	$general_contact_form_7 = get_theme_mod( 'clubstiftung_contact_us_general_contact_form_7' );
-	$general_address_title = get_theme_mod( 'clubstiftung_contact_us_general_address_title' );
-	$customer_support_title = get_theme_mod( 'clubstiftung_contact_us_general_customer_support_title' );
-}
 
 if ( $general_title != '' || $general_entry != '' || $general_address_title != '' || $address1 != '' || $address2 != '' || $customer_support_title != '' || $email != '' || $phone != ''
 || $contact_bar_twitter_url != '' || $contact_bar_facebook_url != '' || $contact_bar_linkedin_url != '' || $general_contact_form_7 != null && $general_contact_form_7 != 'default' ) {

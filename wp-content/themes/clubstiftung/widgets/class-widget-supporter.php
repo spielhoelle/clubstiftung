@@ -36,7 +36,7 @@ class clubstiftung_Widget_Support extends WP_Widget {
         $image_id = clubstiftung_get_image_id_from_image_url( $image );
         $get_attachment_image_src = wp_get_attachment_image_src( $image_id, 'clubstiftung-front-page-supports', 'full' );
 
-        $output  = '<a href="'. $url .'" title="'. $title .'" class="support">';
+        $output  = '<a target="_blank" href="'. $url .'" title="'. $title .'" class="support">';
         $output .= '<figure><img src="/wp-includes/images/blank.gif" style="background-image: url(' . ( $image_id ? esc_url( $get_attachment_image_src[0] ) : $image ) . ');">';
         $output .= '<span class="support-overlay"></span><figcaption><div><h2 class="support-title">'.$title.'</h2><p>blabla bla bla bal bla blab alb alb alb  al ab al</p></div><span class="icon"><i class="fa fa-angle-double-right" aria-hidden="true"></i></span></figcaption>';
         $output .= '</figure></a>';
@@ -74,8 +74,8 @@ class clubstiftung_Widget_Support extends WP_Widget {
             <label for="<?php echo $this->get_field_id( 'url' ); ?>"><?php _e( 'URL:', 'clubstiftung' ); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id( 'url' ); ?>" name="<?php echo $this->get_field_name( 'url' ); ?>" type="text" value="<?php echo esc_attr( $url ); ?>">
         </p>
-       
-        <?php 
+
+        <?php
     }
 
     /**

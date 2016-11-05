@@ -35,11 +35,11 @@ jQuery(document).ready ($) ->
           nav: true
           navText: ['<i class="fa fa-arrow-left" aria-hidden="true"></i>', '<i class="fa fa-arrow-right" aria-hidden="true"></i>']
           responsive:
-            0: 
+            0:
               items: 1
-            600: 
+            600:
               items: 2
-            1000: 
+            1000:
               items: 4
 
   # Counter Number
@@ -53,7 +53,7 @@ jQuery(document).ready ($) ->
     clubstiftungProgressBar()
     OwlCarousel()
     $(window).scroll ->
-      counterVisible = $('#counter').visible()
+      counterVisible = $('#counter').visible(true, false, 'both');
       if counterVisible == true
         counterNumber()
       return
