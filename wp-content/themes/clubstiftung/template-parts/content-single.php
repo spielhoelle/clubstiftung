@@ -7,7 +7,6 @@
  */
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'blog-post' ); ?>>
-	<?php do_action( 'clubstiftung_single_entry_meta' ); ?>
 	<div class="blog-post-entry markup-format">
 
 		<?php
@@ -19,5 +18,6 @@
 		) );
 		?>
 	</div><!--/.blog-post-entry.markup-format-->
+	<?php do_action( 'clubstiftung_single_entry_meta' ); ?>
 
 </article><!--/#post-<?php the_ID(); ?>.blog-post-->

@@ -65,12 +65,12 @@ if( !class_exists( 'clubstiftung_Entry_Meta_Output' ) ) {
 
             $display_post_posted_on_meta = get_theme_mod( 'clubstiftung_enable_post_posted_on_blog_posts', 1 );
             $display_number_comments = get_theme_mod( 'clubstiftung_enable_post_comments_blog_posts', 1 );
-
+            $author  = (esc_html( get_the_author() ) == "admin") ? 'Clubstuftung' : esc_html( get_the_author() ) ;
             if( $display_post_posted_on_meta == 1 ) {
                 $output = '';
 
                  $output .= '<div class="blog-post-meta">';
-                    $output .= '<span class="post-meta-author"><i class="fa fa-user"></i>'. esc_html( get_the_author() ) .'</span>';
+                    $output .= '<span class="post-meta-author"><i class="fa fa-user"></i>'. $author .'</span>';
                     $output .= '<span class="post-meta-time"><i class="fa fa-calendar"></i><time datetime="'. sprintf( '%s-%s-%s', get_the_date( 'Y' ), get_the_date( 'm' ), get_the_date( 'd' ) ) .'">'. sprintf( '%s %s, %s', get_the_date( 'F' ), get_the_date( 'd' ), get_the_date( 'Y' ) ) .'</time></span>';
                     $output .= '<span class="post-meta-categories"><i class="fa fa-folder-o" aria-hidden="true"></i>'.$categories_list.'</span>';
                 $output .= '</div><!--/.blog-post-meta-->';
