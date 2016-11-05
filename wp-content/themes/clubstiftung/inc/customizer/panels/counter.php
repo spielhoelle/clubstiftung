@@ -47,6 +47,44 @@ $wp_customize->add_control(
     )
 );
 
+// Entry
+$wp_customize->add_setting( $prefix .'_counter_general_title',
+    array(
+        'sanitize_callback' => 'clubstiftung_sanitize_html',
+        'default'           => "",
+        'transport'         => 'postMessage'
+    )
+);
+$wp_customize->add_control(
+    $prefix .'_counter_general_title',
+    array(
+        'label'         => __( 'Title', 'clubstiftung' ),
+        'description'   => __( 'Add a title for this section.', 'clubstiftung'),
+        'section'       => $prefix . '_counter_general',
+        'priority'      => 2,
+        'type'          => 'textfield'
+    )
+);
+
+// Entry
+$wp_customize->add_setting( $prefix .'_counter_general_entry',
+    array(
+        'sanitize_callback' => 'clubstiftung_sanitize_html',
+        'default'           => "",
+        'transport'         => 'postMessage'
+    )
+);
+$wp_customize->add_control(
+    $prefix .'_counter_general_entry',
+    array(
+        'label'         => __( 'Entry', 'clubstiftung' ),
+        'description'   => __( 'Add the content for this section.', 'clubstiftung'),
+        'section'       => $prefix . '_counter_general',
+        'priority'      => 2,
+        'type'          => 'textarea'
+    )
+);
+
 /***********************************************/
 /**************** Background *******************/
 /***********************************************/
@@ -106,14 +144,14 @@ $wp_customize->add_setting(
         'transport'         => 'postMessage'
     )
 );
-$wp_customize->add_control( 
-    new WP_Customize_Color_Control( 
-    $wp_customize, 
+$wp_customize->add_control(
+    new WP_Customize_Color_Control(
+    $wp_customize,
     $prefix . '_counter_background_color',
     array(
         'label'     => __( 'Color', 'clubstiftung' ),
         'section'   => $prefix .'_counter_background',
         'settings'  => $prefix . '_counter_background_color',
         'priority'  => 3
-    ) ) 
+    ) )
 );
