@@ -29,7 +29,7 @@ if ( $first_row_from_title || $second_row_from_title || $third_row_from_title ||
 			<?php endif; ?>
 			<div class="col-sm-8 col-sm-offset-2 show-after-pace">
 				<?php if( $entry ): ?>
-					<p><?php echo clubstiftung_sanitize_html( $entry ); ?></p>
+					<p class="padding--bottom"><?php echo clubstiftung_sanitize_html( $entry ); ?></p>
 				<?php endif; ?>
 				<?php if( $first_button_title && $first_button_url ): ?>
 					<a href="<?php echo esc_url( $first_button_url ); ?>" title="<?php echo esc_attr( $first_button_title ); ?>" class="header-button-one"><?php echo esc_html( $first_button_title ); ?></a>
