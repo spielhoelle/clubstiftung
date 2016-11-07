@@ -30,7 +30,6 @@ if( get_option( 'show_on_front' ) == 'posts' ): ?>
 					<?php do_action( 'clubstiftung_after_content_above_footer' ); ?>
 				</section><!--/#blog-->
 			</div><!--/.col-sm-7-->
-			<?php get_sidebar(); ?>
 		</div><!--/.row-->
 	</div><!--/.container-->
 
