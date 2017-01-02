@@ -191,7 +191,7 @@ if(!function_exists('clubstiftung_enqueue_javascripts')) {
 		wp_enqueue_script( 'clubstiftung-owl-carousel', get_template_directory_uri() . '/layout/js/owl-carousel/owl-carousel.min.js', array( 'jquery' ), '2.0.0', true );
 		wp_enqueue_script( 'clubstiftung-count-to', get_template_directory_uri() . '/layout/js/count-to/count-to.min.js', array( 'jquery' ), '', true );
 		wp_enqueue_script( 'clubstiftung-visible', get_template_directory_uri() . '/layout/js/visible/visible.min.js', array( 'jquery' ), '', true );
-		wp_enqueue_script( 'gmap', 'http://maps.google.com/maps/api/js?key=AIzaSyAVJF6ZZOBhPCsCKOj7XGVWS1BSbn3Tb10', array('jquery'), '1.9.5', true);
+		wp_enqueue_script( 'gmap', 'http://maps.google.com/maps/api/js?key=AIzaSyDsgeCEtnu3z2vqOODPhPOM9BBK_KTkNys', array('jquery'), '1.9.5', true);
 
 		// wp_enqueue_script( 'gmap', 'http://maps.google.com/maps/api/js', array( 'jquery' ), '', true );
 		wp_enqueue_script( 'clubstiftung-scripts', get_template_directory_uri() . '/layout/js/scripts.min.js', array( 'jquery' ), '1.0.16', true );
